@@ -8,7 +8,7 @@
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .hero{
 	display: flex;
@@ -70,7 +70,7 @@ body{
   padding: 5px;
   height: 50px;
   outline: none;
-  background-color: #c4c4c4;
+  background-color: #e0e0e0;
   border: 0px;
 }
 .hero .searchTerm:focus{
@@ -79,7 +79,7 @@ body{
 }
 .hero .searchButton {
   position: absolute;
-  left: 10px;
+  right: 10px;
   cursor: pointer;
   color: #000000;
   background: none;
@@ -87,7 +87,7 @@ body{
 }
 .hero .fa-search{
     font-size: 2em;
-    margin: 12px 0;
+    margin: 14px 0;
 }
 
 /*-------------The Verdict-------------*/
@@ -97,7 +97,6 @@ background: #505050;
 padding: 20px;
 display: flex;
 align-items: center;
-margin: 0 0 0px 0;
 justify-content: space-around;
 position: fixed;
 top: 0;
@@ -173,7 +172,21 @@ top: 0;
 	font-family: Roboto, sans-serif;
 	width: 80%;
 }
-
+#Percentage{
+		font-size: 3em;
+		color: red;
+		font-weight: 700;
+		letter-spacing: -5px;
+}
+#description{
+	font-family: Roboto, sans-serif;
+	font-size: 1.2em;
+}
+#colormeplease{
+	font-family: Roboto, sans-serif;
+	font-size: 2em;
+	text-transform: uppercase;
+}
 /*-------------The Verdict-------------*/
 .Heavey-Test{
 	background-color: rgb(233,74,75);

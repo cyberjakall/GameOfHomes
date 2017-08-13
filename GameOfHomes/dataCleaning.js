@@ -6,13 +6,33 @@ var magArray = []; //magnitude of earth quakes
 var depArray = []; //depth of earth quakes
 
 //1 degree = 111km
+var geocoder = new google.maps.Geocoder();
 
+function geocodeUpdateDamage(geocoder) {
+    var search = document.getElementById('search').value;
+    geocoder.geocode({'address': search}, function(results, status) {
+        if (status === 'OK') {
+            var result = results[0];
+            var location = result.geometry.location;
+            console.log(location.lat(), location.lng());
+            goalLat = location.lat();
+            goalLng = location.lng();
+
+            getQuakeInfo()
+              .then(extractEQInfo)
+              .then(calculateRating)
+              .then(updateFeedback);
+
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+  }
 //runs function when pgage has loaded
 $(function() {
-  getQuakeInfo()
-    .then(extractEQInfo)
-    .then(calculateRating)
-    .then(updateFeedback);
+    $('#input').on('click', function() {
+      geocodeUpdateDamage(geocoder);
+    });
 });
 
 
